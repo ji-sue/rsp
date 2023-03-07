@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Game on!</h1>
+    <div class="rsp">
+        <p class="you">You</p>
+        <img src="/images/rsp1.png" alt="" class="img1">
+    </div>
+
+    <div class="rsp">
+        <p class="computer">Computer</p>
+        <img src="/images/rsp2.png" alt="" class="img2">
+        </div>
+
+    <div class="click-me">
+        <button id="button" onclick="window.location.reload();">PLAY</button>
+    </div>
+
+    </div>
+    <script>
+        // step 1: Randomizing images
+        var randomPicture1 = Math.floor(Math.random() * 3) + 1;
+        console.log(randomPicture1);
+
+        // step 2: Creating variable called "randomImage"
+        // rsp1 = ROCK rsp2 = SCISSOR rsp3 = PAPER
+        var randomImage = "rsp" + randomPicture1 + ".jpg";
+        console.log(randomImage);
+
+        // step 3: adding the source value in our image
+        var randomImageSource = "images/" + randomImage; //this is the destination folder
+        console.log(randomImageSource);
+
+        // step 4: dom manipulation for the image path
+        var image1 = document.querySelectorAll("img")[0];
+
+        // step 5: changing the image attribute
+        image1.setAttribute('src',randomImageSource);
+
+        // step 1: Randomizing images
+         var randomPicture2 = Math.floor(Math.random() * 3) + 1;
+        console.log(randomPicture2);
+
+        // step 2: Creating variable called "randomImage"
+        // rsp1 = ROCK rsp2 = SCISSOR rsp3 = PAPER
+        var randomImage1 = "rsp" + randomPicture2 + ".jpg";
+        console.log(randomImage1);
+
+        // step 3: adding the source value in our image
+        var randomImageSource1 = "images/" + randomImage1; //this is the destination folder
+        console.log(randomImageSource1);
+
+        // step 4: dom manipulation for the image path
+        var image2 = document.querySelectorAll("img")[1];
+
+        // step 5: changing the image attribute
+        image2.setAttribute('src',randomImageSource1);
+
+        // ----------------condition code
+        var rock,paper,scissor;
+        rock = "rsp1.jpg"
+        paper = "rsp2.jpg"
+        scissor = "rsp3.jpg"
+
+        // step1: winner
+        // rock wins?
+        if(randomImage === rock && randomImage1 === scissor) {
+            document.querySelector("h1").innerHTML = "YOU WIN!"
+        }
+        else if(randomImage === scissor && randomImage1 === rock){
+            document.querySelector("h1").innerHTML = "YOU LOSS!"
+        }
+          // scissor wins?
+        else if(randomImage === scissor && randomImage1 === paper) {
+            document.querySelector("h1").innerHTML = "YOU WINS!"
+        }
+        else if(randomImage === paper && randomImage1 === scissor){
+            document.querySelector("h1").innerHTML = "YOU LOSS!"
+        }
+
+          // paper wins?
+        else if(randomImage === paper && randomImage1 === rock) {
+            document.querySelector("h1").innerHTML = "YOU WIN!"
+        }
+        else if(randomImage === rock && randomImage1 === paper){
+            document.querySelector("h1").innerHTML = "YOU LOSS!"
+        }
+        else {
+            document.querySelector("h1").innerHTML = "DRAW!"
+        }
+    </script>
+    
+</body>
+<footer>
+    Jakempoy | Jaycee Capuno
+</footer>
+</html>
