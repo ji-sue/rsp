@@ -12,13 +12,13 @@
     <div class="container">
     <h1>Game on!</h1>
     <div class="rsp">
-        <p class="you">You</p>
         <img src="/images/rsp1.png" alt="" class="img1">
+        <p class="you">You</p>
     </div>
 
     <div class="rsp">
-        <p class="computer">Computer</p>
         <img src="/images/rsp2.png" alt="" class="img2">
+        <p class="computer">Computer</p>
         </div>
 
     <div class="click-me">
@@ -77,14 +77,14 @@
             document.querySelector("h1").innerHTML = "YOU WIN!"
         }
         else if(randomImage === scissor && randomImage1 === rock){
-            document.querySelector("h1").innerHTML = "YOU LOSS!"
+            document.querySelector("h1").innerHTML = "COMPUTER WIN!"
         }
           // scissor wins?
         else if(randomImage === scissor && randomImage1 === paper) {
             document.querySelector("h1").innerHTML = "YOU WINS!"
         }
         else if(randomImage === paper && randomImage1 === scissor){
-            document.querySelector("h1").innerHTML = "YOU LOSS!"
+            document.querySelector("h1").innerHTML = "COMPUTER WIN!"
         }
 
           // paper wins?
@@ -92,7 +92,7 @@
             document.querySelector("h1").innerHTML = "YOU WIN!"
         }
         else if(randomImage === rock && randomImage1 === paper){
-            document.querySelector("h1").innerHTML = "YOU LOSS!"
+            document.querySelector("h1").innerHTML = "COMPUTER WIN!"
         }
         else {
             document.querySelector("h1").innerHTML = "DRAW!"
